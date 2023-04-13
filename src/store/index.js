@@ -28,14 +28,16 @@ const initialAuthState = {
 }
 
 const authSlice = createSlice({
-    name:'authentication',
+    name:'auth',
     initialState:initialAuthState,
-    login(state){
-        state.isAuthenticate=true;
-    },
-    logout(state){
-        state.isAuthenticate=false;
-    }
+    reducers:{
+        login(state){
+            state.isAuthenticate=true;
+        },
+        logout(state){
+            state.isAuthenticate=false;
+        }
+    }   
 })
 
 const store =  configureStore({
